@@ -69,6 +69,19 @@
                 });
             }
         })();
+        window["ai_edge_gallery_get_result"] = async (data) => {
+            try {
+                const jsonData = JSON.parse(data);
+                //if (!jsonData.topic) return JSON.stringify({ error: "No topic provided to search." });
+                //if (!jsonData.lang) return JSON.stringify({ error: "No language code (lang) provided." });
+                const wikiResponse = await fetchHKWeather();
+                return JSON.stringify(wikiResponse);
+            } catch (e) {
+                console.error(e);
+                return JSON.stringify({ error: `Failed to query HKO API: ${e.message}` });
+            }
+        };
+
     </script>
 </body>
 </html>
