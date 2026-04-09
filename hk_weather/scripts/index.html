@@ -10,7 +10,7 @@
          * Fetches real-time weather data from the Hong Kong Observatory Open Data API.
          * Filters for specific locations: "Hong Kong Observatory" for temp and "Yau Tsim Mong" for rain.
          */
-        (async function fetchHKWeather() {
+        async function fetchHKWeather() {
             const baseUrl = 'https://data.weather.gov.hk/weatherAPI/opendata/weather.php';
             
             try {
@@ -61,14 +61,16 @@
 
                 // Write to body for the AI Edge Gallery app to capture
                 document.body.innerText = output;
+                return output;
 
             } catch (error) {
                 document.body.innerText = JSON.stringify({ 
                     error: "Failed to connect to HKO API", 
                     details: error.message 
                 });
+                return JSON.stringify({ error: "Failed to connect to HKO API" });
             }
-        })();
+        };
         window["ai_edge_gallery_get_result"] = async (data) => {
             try {
                 const jsonData = JSON.parse(data);
