@@ -27,10 +27,10 @@
                     try {
                         const response = await fetch(url);
                         if (!response.ok) {
-                            console.log(`Failed to fetch ${url}: ${response.statusText}`);
                             throw new Error(`HTTP error! status: ${response.status} for url: ${url}`);
                         }
                         const xmlText = await response.text();
+                        console.log(`Response from ${url}:`, xmlText);
                         const parser = new DOMParser();
                         const xmlDoc = parser.parseFromString(xmlText, "text/xml");
                         const items = xmlDoc.querySelectorAll("item");
