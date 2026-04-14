@@ -34,21 +34,22 @@ From the enquiry of the prompt, identify if is a general enquiry, or a specific 
 #### General Enquiry (e.g. "Give me the latest news updates")
 1. **Fetching**: Retrieve news items from all specified feeds.
 
-2. **Prioritization**: Group and sort news in this order:
+2. The script return a JSON object containing an array of news items with the following fields: `title`, `description`, `link`, `pubDate`, and `sourceUrl`.
+3. **Prioritization**: Group and sort news in this order:
    * **Priority 1**: Hong Kong Local
    * **Priority 2**: International
 
-3. **Exclusion**: Completely ignore/filter out any news related to entertainment, celebrity gossip, or "Gossip" categories.
+4. **Exclusion**: Completely ignore/filter out any news related to entertainment, celebrity gossip, or "Gossip" categories.
 
-4. **Public Impact**: Focus on stories involving policy changes, economic shifts, or public safety.
-5. **Item count limitation**: Return a maximum of 5 news items, ensuring a mix of categories if possible while adhering to the prioritization and relevance criteria.
+5. **Item count limitation**: Return a maximum of 3 news items, ensuring a mix of categories if possible while adhering to the prioritization and relevance criteria.
 
 #### Specific Enquiry (e.g. "Give me the latest news about Middle East warfare")
 1. **Fetching**: Retrieve news items from all specified feeds.
-2. **Category Focus**: Only return news from the specified topic (e.g. Middle East warfare).
-3. **Relevance**: Ensure the news is directly related to the specified topic, even if it means including international news that may not be in the top priority category.
-4. **Exclusion**: Still filter out any entertainment or gossip news, even if it tangentially relates to the topic.
-5. **Item count limitation**: Return a maximum of 5 news items, ensuring a mix of categories if possible while adhering to the prioritization and relevance criteria.
+2. The script return a JSON object containing an array of news items with the following fields: `title`, `description`, `link`, `pubDate`, and `sourceUrl`.
+3. **Category Focus**: Only return news from the specified topic (e.g. Middle East warfare).
+4. **Relevance**: Ensure the news is directly related to the specified topic, even if it means including international news that may not be in the top priority category.
+5. **Exclusion**: Still filter out any entertainment or gossip news, even if it tangentially relates to the topic.
+6. **Item count limitation**: Return a maximum of 3 news items, ensuring a mix of categories if possible while adhering to the prioritization and relevance criteria.
 
 ## Language and Tone
 
