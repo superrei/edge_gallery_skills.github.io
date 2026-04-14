@@ -54,7 +54,7 @@
                         const items = xmlDoc.querySelectorAll("item");
 
                         // Extract items and convert to JSON structure
-                        return Array.from(items).slice(0, 5).map(item => {
+                        return Array.from(items).slice(0, 4).map(item => {
                             const rawTitle = item.querySelector("title")?.textContent || "";
                             const rawDescription = item.querySelector("description")?.textContent || "";
 
