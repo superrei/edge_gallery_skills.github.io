@@ -18,7 +18,7 @@ Trigger this skill when the user asks for news updates, specifically regarding H
 
 The following feeds should be fetched by the JS script:
 
-* **Local**: [https://rthk.hk/rthk/news/rss/e_expressnews_elocal.xml](https://rthk.hk/rthk/news/rss/e_expressnews_elocal.xml)
+* **Local**: [https://rthk.hk/rthk/news/rss/c_expressnews_clocal.xml](https://rthk.hk/rthk/news/rss/c_expressnews_clocal.xml)
 * **International**: [https://rthk.hk/rthk/news/rss/e_expressnews_einternational.xml](https://rthk.hk/rthk/news/rss/e_expressnews_einternational.xml)
 
 ## Instructions for the AI
@@ -30,7 +30,6 @@ use RSS feeds from the above list.
 ### Processing Logic
 
 1. **Fetching**: Retrieve news items from all specified feeds.
-
 2. The script return a JSON object containing `articles`, which is an array of news items with the following fields: `title`, `description`, `link`, `pubDate`, and `sourceUrl`.
 3. Return the title and description of the news items in a concise manner, highlighting the key points and implications for the reader. Always include a link to the original article for further reading.
 4. **Exclusion**: Completely ignore/filter out any news related to entertainment, celebrity gossip, or "Gossip" categories.
