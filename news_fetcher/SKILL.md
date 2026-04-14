@@ -14,8 +14,8 @@ This skill allows the AI to browse multiple news RSS feeds. It prioritizes news 
 
 The following feeds should be fetched by the JS script:
 
-* **Local**: [https://news.mingpao.com/rss/ins/s00001.xml](https://news.mingpao.com/rss/ins/s00001.xml)
-* **International**: [https://news.mingpao.com/rss/ins/s00005.xml](https://news.mingpao.com/rss/ins/s00005.xml)
+* **Local**: [https://rthk.hk/rthk/news/rss/e_expressnews_elocal.xml](https://rthk.hk/rthk/news/rss/e_expressnews_elocal.xml)
+* **International**: [https://rthk.hk/rthk/news/rss/e_expressnews_einternational.xml](https://rthk.hk/rthk/news/rss/e_expressnews_einternational.xml)
 
 ## When to Use This Skill
 
