@@ -39,8 +39,6 @@ From the enquiry of the prompt, identify if is a general enquiry, or a specific 
    * **Priority 1**: Hong Kong Local
    * **Priority 2**: Finance
    * **Priority 3**: International
-   * **Priority 4**: Technology (extracted from general feeds)
-   * **Priority 5**: Sport
 
 3. **Exclusion**: Completely ignore/filter out any news related to entertainment, celebrity gossip, or "Gossip" categories.
 
