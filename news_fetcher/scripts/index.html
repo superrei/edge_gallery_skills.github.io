@@ -35,19 +35,13 @@
                             throw new Error(`HTTP error! status: ${response.status} for url: ${url}`);
                         }
                         const xmlText = await response.text();
-                        console.warn(`Fetched data from ${url}:`, xmlText.substring(0, 200) + "..."); // Log the first 200 chars for debugging
+                        //console.warn(`Fetched data from ${url}:`, xmlText.substring(0, 200) + "..."); // Log the first 200 chars for debugging
                         const parser = new DOMParser();
                         const xmlDoc = parser.parseFromString(xmlText, "text/xml");
                         const items = xmlDoc.querySelectorAll("item");
 
                         // Extract items and convert to JSON structure
                         return Array.from(items).slice(0, 3).map(item => {
-                            console.info(`Processing item from ${url}:`, {
-                                title: item.querySelector("title")?.textContent || "",
-                                link: item.querySelector("link")?.textContent || "",
-                                pubDate: item.querySelector("pubDate")?.textContent || "",
-                                description: item.querySelector("description")?.textContent || ""
-                            });
                             return {
                                 title: item.querySelector("title")?.textContent || "",
                                 link: item.querySelector("link")?.textContent || "",
@@ -73,6 +67,8 @@
                     total_articles_fetched: consolidatedArticles.length,
                     articles: consolidatedArticles
                 };
+
+                console.info("Final consolidated articles:", result.articles);
 
                 return JSON.stringify(result, null, 2);
 
