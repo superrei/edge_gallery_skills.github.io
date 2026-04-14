@@ -15,7 +15,6 @@ This skill allows the AI to browse multiple news RSS feeds. It prioritizes news 
 The following feeds should be fetched by the JS script:
 
 * **Local**: [https://news.mingpao.com/rss/ins/s00001.xml](https://news.mingpao.com/rss/ins/s00001.xml)
-* **Finance**: [https://news.mingpao.com/rss/ins/s00002.xml](https://news.mingpao.com/rss/ins/s00002.xml)
 * **International**: [https://news.mingpao.com/rss/ins/s00005.xml](https://news.mingpao.com/rss/ins/s00005.xml)
 
 ## When to Use This Skill
@@ -37,8 +36,7 @@ From the enquiry of the prompt, identify if is a general enquiry, or a specific 
 
 2. **Prioritization**: Group and sort news in this order:
    * **Priority 1**: Hong Kong Local
-   * **Priority 2**: Finance
-   * **Priority 3**: International
+   * **Priority 2**: International
 
 3. **Exclusion**: Completely ignore/filter out any news related to entertainment, celebrity gossip, or "Gossip" categories.
 
