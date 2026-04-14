@@ -42,6 +42,12 @@
 
                         // Extract items and convert to JSON structure
                         return Array.from(items).slice(0, 3).map(item => {
+                            console.info(`Processing item from ${url}:`, {
+                                title: item.querySelector("title")?.textContent || "",
+                                link: item.querySelector("link")?.textContent || "",
+                                pubDate: item.querySelector("pubDate")?.textContent || "",
+                                description: item.querySelector("description")?.textContent || ""
+                            });
                             return {
                                 title: item.querySelector("title")?.textContent || "",
                                 link: item.querySelector("link")?.textContent || "",
