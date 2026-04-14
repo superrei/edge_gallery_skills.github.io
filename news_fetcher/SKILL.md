@@ -31,7 +31,7 @@ use RSS feeds from the above list.
 
 1. **Fetching**: Retrieve news items from all specified feeds.
 
-2. The script return a JSON object containing `articles`, which is an array of news items with the following fields: `title`, `link`, `pubDate`, and `sourceUrl`.
+2. The script return a JSON object containing `articles`, which is an array of news items with the following fields: `title`, `description`, `link`, `pubDate`, and `sourceUrl`.
 3. Return the title and description of the news items in a concise manner, highlighting the key points and implications for the reader. Always include a link to the original article for further reading.
 4. **Exclusion**: Completely ignore/filter out any news related to entertainment, celebrity gossip, or "Gossip" categories.
 

@@ -7,6 +7,19 @@
 <body>
     <script>
         /**
+         * Cleans text by removing control characters like newlines, tabs, and carriage returns,
+         * and trimming whitespace to ensure the LLM receives a clean string.
+         */
+        const cleanText = (text) => {
+            if (!text) return "";
+            return text
+                .replace(/[\r\n\t]+/g, " ") // Replace newlines, returns, and tabs with a single space
+                .replace(/\\"/g, '"')       // Fix escaped quotes if they exist in raw text
+                .replace(/\s\s+/g, ' ')     // Replace multiple spaces with one
+                .trim();
+        };
+
+        /**
          * AI Edge Gallery Interface
          * Fetches multiple RSS feeds, converts XML to JSON, and consolidates the output.
          * The input `data` should be a JSON string containing an array of URLs:
@@ -42,11 +55,14 @@
 
                         // Extract items and convert to JSON structure
                         return Array.from(items).slice(0, 3).map(item => {
+                            const rawTitle = item.querySelector("title")?.textContent || "";
+                            const rawDescription = item.querySelector("description")?.textContent || "";
+
                             return {
-                                title: item.querySelector("title")?.textContent || "",
+                                title: cleanText(rawTitle),
                                 link: item.querySelector("link")?.textContent || "",
                                 pubDate: item.querySelector("pubDate")?.textContent || "",
-                                //description: item.querySelector("description")?.textContent || "",
+                                description: cleanText(rawDescription),
                                 sourceUrl: url // Track which feed this came from
                             };
                         });
