@@ -12,7 +12,7 @@
          * The input `data` should be a JSON string containing an array of URLs:
          * { "feeds": ["url1", "url2", ...] }
          */
-        window["ai_edge_gallery_get_result"] = async (dataStr) => {
+        window["ai_edge_gallery_get_result"] = async (dataStr, secret) => {
             try {
                 // Parse the input data
                 const data = JSON.parse(dataStr);
@@ -25,8 +25,12 @@
                 // Fetch all feeds in parallel
                 const feedPromises = urls.map(async (url) => {
                     try {
-                        const proxyUrl = `https://api.allorigins.win/raw?${encodeURIComponent(url)}`;
-                        const response = await fetch(proxyUrl);
+                        const proxyUrl = `https://th8qyh4r2g.execute-api.ap-east-1.amazonaws.com/default/cors-proxy?${encodeURIComponent(url)}`;
+                        const response = await fetch(proxyUrl, {
+                            headers: {
+                                'Authorization': `${secret}`
+                            }
+                        });
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status} for url: ${url}`);
                         }

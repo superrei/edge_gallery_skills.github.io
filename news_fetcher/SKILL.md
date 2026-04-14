@@ -1,6 +1,9 @@
 ---
 name: news_fetcher
 description: Crawls specified Hong Kong and International RSS feeds and prioritizes them by category and public impact.
+metadata: 
+  require-secret: true
+  require-secret-description: "This skill requires access to the RSS feed URLs, which are publicly available and do not require authentication. However, to by-pass CORS, the JS script will assess a CORS proxy, which may require a secret key. Please provide the necessary CORS proxy key if required."
 ---
 
 # News Crawler Agent Skill
