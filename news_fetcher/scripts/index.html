@@ -25,7 +25,7 @@
                 // Fetch all feeds in parallel
                 const feedPromises = urls.map(async (url) => {
                     try {
-                        const proxyUrl = `https://th8qyh4r2g.execute-api.ap-east-1.amazonaws.com/default/cors-proxy?${encodeURIComponent(url)}`;
+                        const proxyUrl = `https://th8qyh4r2g.execute-api.ap-east-1.amazonaws.com/default/cors-proxy?url=${encodeURIComponent(url)}`;
                         const response = await fetch(proxyUrl, {
                             headers: {
                                 'Authorization': `${secret}`
