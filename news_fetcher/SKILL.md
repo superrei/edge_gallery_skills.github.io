@@ -18,7 +18,7 @@ Trigger this skill when the user asks for news updates, specifically regarding H
 
 The following feeds should be fetched by the JS script:
 
-* **Local**: [https://news.mingpao.com/rss/ins/s00001.xml](https://news.mingpao.com/rss/ins/s00001.xml)
+* **Local**: [https://rthk.hk/rthk/news/rss/c_expressnews_clocal.xml](https://rthk.hk/rthk/news/rss/c_expressnews_clocal.xml)
 * **International**: [https://rthk.hk/rthk/news/rss/e_expressnews_einternational.xml](https://rthk.hk/rthk/news/rss/e_expressnews_einternational.xml)
 
 ## Instructions for the AI
